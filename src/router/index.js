@@ -8,12 +8,16 @@ import Dog from "../pages/Dog.vue"
 
 const routes = [
     {
-        path: '/Cat',
-        component: resolve => require(['../pages/Cat.vue'], resolve),
+        path: '/',
+        redirect: '/dog', // 强制重定向，会到下面去找匹配该path的component
     },
     {
-        path: '/Dog',
+        path: '/dog',
         component: Dog
+    },
+    {
+        path: '/cat',
+        component: resolve => require(['../pages/Cat.vue'], resolve),
     }
 ]
 
